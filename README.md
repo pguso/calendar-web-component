@@ -2,6 +2,8 @@
 
 Native HTML web component calendar. Can easily be used in any framework or plain HTML.
 
+![alt text](https://raw.githubusercontent.com/pguso/calendar-web-component/main/images/calendar.png)
+
 ### Integration
 
 #### Install the calendar component
