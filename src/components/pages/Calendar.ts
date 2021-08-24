@@ -162,6 +162,7 @@ class Calendar extends HTMLElement {
     private _showFillDays: boolean = true
     private _currentMonth: number
     private _today: CalendarEntry
+    private _disableDaysBeforeToday: boolean = false
 
     constructor() {
         super()
@@ -190,7 +191,7 @@ class Calendar extends HTMLElement {
      * Observe changes of your attributes
      */
     static get observedAttributes() {
-        return ['day-names', 'month-names', 'show-fill-days', 'selected-date']
+        return ['day-names', 'month-names', 'show-fill-days', 'selected-date', 'disable-days-before-today']
     }
 
     /**
@@ -218,6 +219,9 @@ class Calendar extends HTMLElement {
                 break
             case 'show-fill-days':
                 this._showFillDays = newValue !== 'false'
+                break
+            case 'disable-days-before-today':
+                this._disableDaysBeforeToday = newValue !== 'false'
                 break
             case 'selected-date':
                 this._selectedDate = newValue as CalendarEntry
@@ -260,6 +264,14 @@ class Calendar extends HTMLElement {
 
     get today() {
         return this._today
+    }
+
+    set disableDaysBeforeToday(disableDaysBeforeToday) {
+        this._disableDaysBeforeToday = disableDaysBeforeToday
+    }
+
+    get disableDaysBeforeToday() {
+        return this._disableDaysBeforeToday
     }
 
     /**
@@ -354,7 +366,7 @@ class Calendar extends HTMLElement {
      */
     private buildDay(day: number, index: number): HTMLSpanElement {
         let span: HTMLSpanElement;
-        const isInDisabledList = this.isDisabledDay(day)
+        const isInDisabledList = this._disableDaysBeforeToday ? this.isDisabledDay(day) : false
 
         if ((index < this.fillStartCount || index >= this.fillEndCount)) {
             span = CalenderElementsHelper.buildDisabledDay(this._showFillDays, day)

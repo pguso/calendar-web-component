@@ -36,6 +36,7 @@ Usage in HTML file
 ```html
 <date-picker
     id="date-picker"
+    disable-days-before-today="true"
     day-names="Mo, Di, Mi, Do, Fr, Sa, So"
     month-names="January, February, March, April, May, June, July, August, September, October, November, December"
     show-fill-days="false"></date-picker>
@@ -47,6 +48,7 @@ const datePicker = document.getElementById('date-picker')
 datePicker.dayNames = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 datePicker.monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 datePicker.showFillDays = false
+datePicker.disableDaysBeforeToday = true
 ```
 
 Example of getters
