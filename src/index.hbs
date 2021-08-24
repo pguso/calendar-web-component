@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-9">
+    <title>"{{htmlWebpackPlugin.options.title}}"</title>
+</head>
+
+<body>
+    <date-picker id="date-picker" show-fill-days="true"></date-picker>
+
+    <script>
+        window.onload = function () {
+            const root = document.getElementById('date-picker');
+
+            root.disabledDates = [
+                {year: 2021, day: 1, month: 9},
+                {year: 2021, day: 2, month: 9},
+                {year: 2021, day: 3, month: 9},
+                {year: 2021, day: 4, month: 9},
+                {year: 2021, day: 5, month: 9},
+                {year: 2021, day: 11, month: 9},
+                {year: 2021, day: 12, month: 9},
+                {year: 2021, day: 13, month: 9},
+                {year: 2021, day: 22, month: 9},
+                {year: 2021, day: 24, month: 9},
+            ]
+        }
+    </script>
+</body>
+
+</html>
