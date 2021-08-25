@@ -49,6 +49,11 @@ datePicker.dayNames = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 datePicker.monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 datePicker.showFillDays = false
 datePicker.disableDaysBeforeToday = true
+datePicker.disabledDates = root.disabledDates = [
+    {year: 2021, day: 3, month: 9},
+    {year: 2021, day: 12, month: 9},
+    {year: 2021, day: 22, month: 9},
+]
 ```
 
 Example of getters

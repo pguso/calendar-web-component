@@ -366,11 +366,10 @@ class Calendar extends HTMLElement {
      */
     private buildDay(day: number, index: number): HTMLSpanElement {
         let span: HTMLSpanElement;
-        const isInDisabledList = this._disableDaysBeforeToday ? this.isDisabledDay(day) : false
 
         if ((index < this.fillStartCount || index >= this.fillEndCount)) {
             span = CalenderElementsHelper.buildDisabledDay(this._showFillDays, day)
-        } else if (isInDisabledList) {
+        } else if (this.isDisabledDay(day)) {
             span = CalenderElementsHelper.buildDisabledDay(true, day, 'not-available')
         } else {
             const cssClasses = this.getCssClassesForDay(day, index)
@@ -412,7 +411,10 @@ class Calendar extends HTMLElement {
 
         const isGivenDateInDisabledDates = this._disabledDates
             .filter(d => d.day === day && d.year === this.date.year && d.month === this.date.month).length > 0
-        if (isGivenDateInDisabledDates || CalendarHelper.isDayBeforeToday(this.date.year, this.date.month, day)) {
+        if (
+            isGivenDateInDisabledDates
+            || (CalendarHelper.isDayBeforeToday(this.date.year, this.date.month, day) && this._disableDaysBeforeToday)
+        ) {
             isDisabled = true;
         }
 
