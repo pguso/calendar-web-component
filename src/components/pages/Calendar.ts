@@ -8,9 +8,7 @@ const template = document.createElement('template')
 template.innerHTML = `
   <style>
     .calendar {
-      width: 50%;
       font-family: Arial, sans-serif;
-      padding: 1rem;
     }
     
     .calendar > * {
@@ -256,6 +254,7 @@ class Calendar extends HTMLElement {
     set disabledDates(disabledDates: CalendarEntry[]) {
         this._disabledDates = disabledDates
         this.showDaysInMonth(true)
+        console.log('set')
     }
 
     get currentMonth() {
@@ -366,10 +365,11 @@ class Calendar extends HTMLElement {
      */
     private buildDay(day: number, index: number): HTMLSpanElement {
         let span: HTMLSpanElement;
+        const isDisabledDay = this.isDisabledDay(day)
 
         if ((index < this.fillStartCount || index >= this.fillEndCount)) {
             span = CalenderElementsHelper.buildDisabledDay(this._showFillDays, day)
-        } else if (this.isDisabledDay(day)) {
+        } else if (isDisabledDay) {
             span = CalenderElementsHelper.buildDisabledDay(true, day, 'not-available')
         } else {
             const cssClasses = this.getCssClassesForDay(day, index)
