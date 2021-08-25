@@ -23,7 +23,7 @@ template.innerHTML = `
       font-weight: bold;
       font-size: 1.1rem;
       margin: 0 1.8rem;
-      padding: 0 2.5rem;
+      padding: 0 5.5rem;
     }
     
     .calendar span {
@@ -104,8 +104,8 @@ template.innerHTML = `
     }
     
     span.arrows {
-       width: .7rem;
-       height: .7rem;
+       width: 11px;
+       height: 14px;
     }
     
     .arrows:hover {
