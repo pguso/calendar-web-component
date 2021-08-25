@@ -23,6 +23,7 @@ template.innerHTML = `
       font-weight: bold;
       font-size: 1.1rem;
       margin: 0 1.8rem;
+      padding: 0 2.5rem;
     }
     
     .calendar span {
@@ -105,7 +106,6 @@ template.innerHTML = `
     span.arrows {
        width: .7rem;
        height: .7rem;
-       border-color: #000;
     }
     
     .arrows:hover {
@@ -197,6 +197,11 @@ class Calendar extends HTMLElement {
             'disable-days-before-today',
             'primary-color',
             'secondary-color',
+            'header-text-color',
+            'disabled-text-color',
+            'day-text-color',
+            'selected-text-color',
+            'selected-border-color',
         ]
     }
 
@@ -238,6 +243,21 @@ class Calendar extends HTMLElement {
             case 'secondary-color':
                 this.secondaryColor = newValue as string
                 break
+            case 'header-text-color':
+                this.headerTextColor = newValue as string
+                break
+            case 'disabled-text-color':
+                this.disabledTextColor = newValue as string
+                break
+            case 'day-text-color':
+                this.dayTextColor = newValue as string
+                break
+            case 'selected-text-color':
+                this.selectedTextColor = newValue as string
+                break
+            case 'selected-border-color':
+                this.selectedBorderColor = newValue as string
+                break
         }
     }
 
@@ -257,6 +277,46 @@ class Calendar extends HTMLElement {
         this.appendStyle(`
           .material .days-in-month span:hover:not(.disabled) i:not(.selected) {
             background: ${color} !important
+          }
+        `);
+    }
+
+    set headerTextColor(color: string) {
+        this.appendStyle(`
+          .calendar header {
+            color: ${color} !important
+          }
+        `);
+    }
+
+    set disabledTextColor(color: string) {
+        this.appendStyle(`
+          .days-in-month span.disabled {
+            color: ${color};
+          }
+        `);
+    }
+
+    set dayTextColor(color: string) {
+        this.appendStyle(`
+          .calendar {
+            color: ${color};
+          }
+        `);
+    }
+
+    set selectedTextColor(color: string) {
+        this.appendStyle(`
+          .material .days-in-month i.selected {
+            color: ${color};
+          }
+        `);
+    }
+
+    set selectedBorderColor(color: string) {
+        this.appendStyle(`
+          .material .days-in-month i.active {
+            border-color: ${color};
           }
         `);
     }

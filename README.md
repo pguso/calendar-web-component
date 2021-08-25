@@ -46,6 +46,11 @@ Usage in HTML file
     id="date-picker"
     primary-color="#000"
     secondary-color="#999"
+    header-text-color="#000"
+    disabled-text-color="#eee"
+    day-text-color="#333"
+    selected-text-color="#fff"
+    selected-border-color="blue"
     disable-days-before-today="true"
     day-names="Mo, Di, Mi, Do, Fr, Sa, So"
     month-names="January, February, March, April, May, June, July, August, September, October, November, December"
@@ -59,11 +64,18 @@ datePicker.dayNames = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 datePicker.monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 datePicker.showFillDays = false
 datePicker.disableDaysBeforeToday = true
-datePicker.disabledDates = root.disabledDates = [
+datePicker.disabledDates = [
     {year: 2021, day: 3, month: 9},
     {year: 2021, day: 12, month: 9},
     {year: 2021, day: 22, month: 9},
 ]
+datePicker.primaryColor = #000
+datePicker.secondaryColor = #000
+datePicker.headerTextColor = #000
+datePicker.disabledTextColor = #000
+datePicker.dayTextColor = #000
+datePicker.selectedTextColor = #000
+datePicker.selectedBorderColor = #000
 ```
 
 Example of getters
