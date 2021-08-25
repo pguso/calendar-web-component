@@ -4,6 +4,14 @@ Native HTML web component calendar. Can easily be used in any framework or plain
 
 ![calendar explained](https://raw.githubusercontent.com/pguso/calendar-web-component/main/images/calendar.png)
 
+### Styled Examples
+
+[Material Design (Pen)](https://codepen.io/pguso/pen/mdwyWMJ)
+
+[Simple Design (Pen)](https://codepen.io/pguso/pen/vYZEJJY)
+
+[Mobile Design (Pen)](https://codepen.io/pguso/pen/VwWYzdw)
+
 ### Integration
 
 #### Install the calendar component
@@ -76,14 +84,6 @@ console.log(datePicker.selectedDate)
 console.log(datePicker.currentMonth)
 console.log(datePicker.today)
 ```
-
-### Styled Examples
-
-[Material Design (Pen)](https://codepen.io/pguso/pen/mdwyWMJ)
-
-[Simple Design (Pen)](https://codepen.io/pguso/pen/vYZEJJY)
-
-[Mobile Design](https://codepen.io/pguso/pen/VwWYzdw)
 
 ### Dev Setup
 
