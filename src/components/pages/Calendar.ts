@@ -23,7 +23,6 @@ template.innerHTML = `
       font-weight: bold;
       font-size: 1.1rem;
       margin: 0 1.8rem;
-      padding: 0 2.5rem;
     }
     
     .calendar span {
