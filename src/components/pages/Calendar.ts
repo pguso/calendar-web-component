@@ -104,8 +104,8 @@ template.innerHTML = `
     }
     
     span.arrows {
-       width: 20px;
-       height: 20px;
+       width: .7rem;
+       height: .7rem;
     }
     
     .arrows:hover {
