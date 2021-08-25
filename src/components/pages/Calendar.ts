@@ -246,6 +246,10 @@ class Calendar extends HTMLElement {
           .material .days-in-month i.selected {
             background: ${color} !important
           }
+          
+          .arrows:hover {
+            border-color: ${color} !important
+          }
         `);
     }
 
@@ -253,10 +257,6 @@ class Calendar extends HTMLElement {
         this.appendStyle(`
           .material .days-in-month span:hover:not(.disabled) i:not(.selected) {
             background: ${color} !important
-          }
-          
-          .arrows:hover {
-            border-color: ${color} !important
           }
         `);
     }
