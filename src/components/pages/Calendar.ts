@@ -201,7 +201,7 @@ class Calendar extends HTMLElement {
             'disabled-text-color',
             'day-text-color',
             'selected-text-color',
-            'active-border-color',
+            'today-border-color',
         ]
     }
 
@@ -255,8 +255,8 @@ class Calendar extends HTMLElement {
             case 'selected-text-color':
                 this.selectedTextColor = newValue as string
                 break
-            case 'active-border-color':
-                this.activeBorderColor = newValue as string
+            case 'today-border-color':
+                this.todayBorderColor = newValue as string
                 break
         }
     }
@@ -313,7 +313,7 @@ class Calendar extends HTMLElement {
         `);
     }
 
-    set activeBorderColor(color: string) {
+    set todayBorderColor(color: string) {
         this.appendStyle(`
           .material .days-in-month i.active {
             border-color: ${color};
