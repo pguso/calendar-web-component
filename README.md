@@ -36,6 +36,8 @@ Usage in HTML file
 ```html
 <date-picker
     id="date-picker"
+    primary-color="#000"
+    secondary-color="#999"
     disable-days-before-today="true"
     day-names="Mo, Di, Mi, Do, Fr, Sa, So"
     month-names="January, February, March, April, May, June, July, August, September, October, November, December"

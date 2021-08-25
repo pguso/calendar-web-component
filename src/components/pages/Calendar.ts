@@ -189,7 +189,15 @@ class Calendar extends HTMLElement {
      * Observe changes of your attributes
      */
     static get observedAttributes() {
-        return ['day-names', 'month-names', 'show-fill-days', 'selected-date', 'disable-days-before-today']
+        return [
+            'day-names',
+            'month-names',
+            'show-fill-days',
+            'selected-date',
+            'disable-days-before-today',
+            'primary-color',
+            'secondary-color',
+        ]
     }
 
     /**
@@ -224,7 +232,33 @@ class Calendar extends HTMLElement {
             case 'selected-date':
                 this._selectedDate = newValue as CalendarEntry
                 break
+            case 'primary-color':
+                this.primaryColor = newValue as string
+                break
+            case 'secondary-color':
+                this.secondaryColor = newValue as string
+                break
         }
+    }
+
+    set primaryColor(color: string) {
+        this.appendStyle(`
+          .material .days-in-month i.selected {
+            background: ${color} !important
+          }
+        `);
+    }
+
+    set secondaryColor(color: string) {
+        this.appendStyle(`
+          .material .days-in-month span:hover:not(.disabled) i:not(.selected) {
+            background: ${color} !important
+          }
+          
+          .arrows:hover {
+            border-color: ${color} !important
+          }
+        `);
     }
 
     set dayNames(dayNames: string[]) {
@@ -440,6 +474,12 @@ class Calendar extends HTMLElement {
     private setCurrentMonth(): void {
         this.setAttribute('current-month', String(this.date.month))
         this._currentMonth = this.date.month
+    }
+
+    private appendStyle(newStyle: string): void {
+        const style = document.createElement('style');
+        style.innerHTML = newStyle;
+        this.shadowRoot.appendChild(style);
     }
 }
 
