@@ -254,7 +254,6 @@ class Calendar extends HTMLElement {
     set disabledDates(disabledDates: CalendarEntry[]) {
         this._disabledDates = disabledDates
         this.showDaysInMonth(true)
-        console.log('set')
     }
 
     get currentMonth() {
