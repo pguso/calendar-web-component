@@ -22,7 +22,7 @@ template.innerHTML = `
       color: #666;
       font-weight: bold;
       font-size: 1.1rem;
-      margin: 0 1.8rem;
+      padding: 0 1.8rem;
     }
     
     .calendar span {
@@ -201,6 +201,8 @@ class Calendar extends HTMLElement {
             'day-text-color',
             'selected-text-color',
             'today-border-color',
+            'month-name-background',
+            'day-names-background',
         ]
     }
 
@@ -257,6 +259,12 @@ class Calendar extends HTMLElement {
             case 'today-border-color':
                 this.todayBorderColor = newValue as string
                 break
+            case 'month-name-background':
+                this.monthNameBackground = newValue as string
+                break
+            case 'day-names-background':
+                this.dayNamesBackground = newValue as string
+                break
         }
     }
 
@@ -282,7 +290,7 @@ class Calendar extends HTMLElement {
 
     set headerTextColor(color: string) {
         this.appendStyle(`
-          .calendar header {
+          .calendar header, .day-names {
             color: ${color} !important
           }
         `);
@@ -363,6 +371,22 @@ class Calendar extends HTMLElement {
 
     get disableDaysBeforeToday() {
         return this._disableDaysBeforeToday
+    }
+
+    set monthNameBackground(color: string) {
+        this.appendStyle(`
+          header {
+            background: ${color};
+          }
+        `);
+    }
+
+    set dayNamesBackground(color: string) {
+        this.appendStyle(`
+          .day-names {
+            background: ${color}
+          }
+        `);
     }
 
     /**
