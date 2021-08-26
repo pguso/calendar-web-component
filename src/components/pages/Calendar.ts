@@ -203,6 +203,7 @@ class Calendar extends HTMLElement {
             'today-border-color',
             'month-name-background',
             'day-names-background',
+            'additional-style'
         ]
     }
 
@@ -264,6 +265,9 @@ class Calendar extends HTMLElement {
                 break
             case 'day-names-background':
                 this.dayNamesBackground = newValue as string
+                break
+            case 'additional-style':
+                this.additionalStyle = newValue as string
                 break
         }
     }
@@ -387,6 +391,13 @@ class Calendar extends HTMLElement {
             background: ${color}
           }
         `);
+    }
+
+    set additionalStyle(style: string) {
+        this.appendStyle(style.replace(
+            /[^a-zA-Z0-9 .\-#{}:;()%>*,]/g,
+            ""
+        ))
     }
 
     /**

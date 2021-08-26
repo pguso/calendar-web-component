@@ -20,11 +20,11 @@ Native HTML web component calendar. Can easily be used in any framework or plain
 
 ```npm i calendar-native-web-component```
 
-or 
+or
 
 ```yarn add calendar-native-web-component```
 
-#### Import the package 
+#### Import the package
 
 ```import 'calendar-native-web-component'```
 
@@ -45,18 +45,20 @@ Example of setters
 Usage in HTML file
 ```html
 <date-picker
-    id="date-picker"
-    primary-color="#000"
-    secondary-color="#999"
-    header-text-color="#000"
-    disabled-text-color="#eee"
-    day-text-color="#333"
-    selected-text-color="#fff"
-    selected-border-color="blue"
-    disable-days-before-today="true"
-    day-names="Mo, Di, Mi, Do, Fr, Sa, So"
-    month-names="January, February, March, April, May, June, July, August, September, October, November, December"
-    show-fill-days="false"></date-picker>
+        id="date-picker"
+        primary-color="#000"
+        secondary-color="#999"
+        header-text-color="#000"
+        disabled-text-color="#eee"
+        day-text-color="#333"
+        selected-text-color="#fff"
+        selected-border-color="blue"
+        month-name-background="#E9B947"
+        day-names-background="#01123F"
+        disable-days-before-today="true"
+        day-names="Mo, Di, Mi, Do, Fr, Sa, So"
+        month-names="January, February, March, April, May, June, July, August, September, October, November, December"
+        show-fill-days="false"></date-picker>
 ```
 
 Usage in JavaScript
@@ -71,13 +73,24 @@ datePicker.disabledDates = [
     {year: 2021, day: 12, month: 9},
     {year: 2021, day: 22, month: 9},
 ]
-datePicker.primaryColor = #000
-datePicker.secondaryColor = #000
-datePicker.headerTextColor = #000
-datePicker.disabledTextColor = #000
-datePicker.dayTextColor = #000
-datePicker.selectedTextColor = #000
-datePicker.selectedBorderColor = #000
+datePicker.primaryColor = '#000'
+datePicker.secondaryColor = '#000'
+datePicker.headerTextColor = '#000'
+datePicker.disabledTextColor = '#000'
+datePicker.dayTextColor = '#000'
+datePicker.selectedTextColor = '#000'
+datePicker.selectedBorderColor = '#000'
+datePicker.monthNameBackground = '#E9B947'
+datePicker.dayNamesBackground = '#01123F'
+datePicker.additionalStyle = `
+    .calendar > * {
+      line-height: 2rem;
+    }
+    
+    header {
+        padding: .5rem 1rem;
+    }
+`
 ```
 
 Example of getters
@@ -86,8 +99,8 @@ Usage in HTML file
 ```html
 <date-picker
         id="date-picker"
-        current-month="8" 
-        today="24.8.2021" 
+        current-month="8"
+        today="24.8.2021"
         selected-date="28.8.2021"></date-picker>
 ```
 
@@ -103,7 +116,7 @@ console.log(datePicker.today)
 
 - clone repository
 - open the console and switch into the root of this repository
-- run `yarn` to install the dependencies 
+- run `yarn` to install the dependencies
 
 ### Run dev server
 
