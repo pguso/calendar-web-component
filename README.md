@@ -12,6 +12,8 @@ Native HTML web component calendar. Can easily be used in any framework or plain
 
 [Mobile Design (Pen)](https://codepen.io/pguso/pen/VwWYzdw)
 
+[Dark Design (Pen)](https://codepen.io/pguso/pen/YzQPrdr)
+
 ### Integration
 
 #### Install the calendar component
