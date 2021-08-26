@@ -4,15 +4,17 @@ Native HTML web component calendar. Can easily be used in any framework or plain
 
 ![calendar explained](https://raw.githubusercontent.com/pguso/calendar-web-component/main/images/calendar.png)
 
-### Styled Examples
+### Styled Examples (Codepen)
 
-[Material Design (Pen)](https://codepen.io/pguso/pen/mdwyWMJ)
+[Material Design](https://codepen.io/pguso/pen/mdwyWMJ)
 
-[Simple Design (Pen)](https://codepen.io/pguso/pen/vYZEJJY)
+[Simple Design](https://codepen.io/pguso/pen/vYZEJJY)
 
-[Mobile Design (Pen)](https://codepen.io/pguso/pen/VwWYzdw)
+[Mobile Design](https://codepen.io/pguso/pen/VwWYzdw)
 
-[Dark Design (Pen)](https://codepen.io/pguso/pen/YzQPrdr)
+[Dark Design](https://codepen.io/pguso/pen/YzQPrdr)
+
+[With Input](https://codepen.io/pguso/pen/rNwVOdW)
 
 ### Integration
 
