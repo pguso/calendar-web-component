@@ -58,8 +58,12 @@ template.innerHTML = `
       width: 100%;
     }
     
-    .days-in-month i.padding-single-digit {
+    .calendar .days-in-month i.padding-single-digit {
       padding: .8rem 1.1rem;
+    }
+    
+    .calendar  .days-in-month i.active.padding-single-digit {
+      padding: .6rem .9rem;
     }
     
     .days-in-month span.disabled {
